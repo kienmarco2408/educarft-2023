@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Image } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -52,9 +52,9 @@ function Tabs() {
         tabBarShowLabel: false,
         tabBarStyle: {
           elevation: 0,
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "#EEF1FE",
           width: "100%",
-          height: "9%",
+          height: "10%",
           shadowColor: "#FFF9EC",
           shadowOffset: {
             width: 5,

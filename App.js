@@ -1,12 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import RootStack from "./src/router/Stack";
+import { StyleSheet, View } from "react-native";
+import RootStack from "./src/router/RootStack";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
       <RootStack />
+      <StatusBar style="auto" />
     </View>
   );
 }
