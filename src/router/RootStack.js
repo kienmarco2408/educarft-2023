@@ -7,6 +7,7 @@ import Home from "../screen/Home";
 import Profile from "../screen/Profile";
 import Saved from "../screen/Saved";
 import Time from "../screen/Time";
+import { AntDesign, FontAwesome5, Ionicons } from "@expo/vector-icons";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -75,20 +76,21 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: "center",
+                width: 100,
+                height: 44,
+                borderRadius: 35,
+                backgroundColor: focused ? "#0047D7" : "#EEF1FE",
                 justifyContent: "center",
-                top: "-5%",
+                alignItems: "center",
               }}
             >
-              <Image
-                source={require("../storages/nav/home.png")}
-                resizeMode="contain"
-                style={{
-                  width: 18.72,
-                  height: 18.72,
-                  tintColor: focused ? "#0047D7" : "#9BB7F0",
-                }}
-              ></Image>
+              <FontAwesome5
+                name="list-ul"
+                size={30}
+                color={
+                  focused ? "rgba(255, 255, 255, 1)" : "rgba(25, 64, 182, 0.31)"
+                }
+              />
             </View>
           ),
         }}
@@ -102,20 +104,21 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: "center",
+                width: 100,
+                height: 44,
+                borderRadius: 35,
+                backgroundColor: focused ? "#0047D7" : "#EEF1FE",
                 justifyContent: "center",
-                top: "5%",
+                alignItems: "center",
               }}
             >
-              <Image
-                source={require("../storages/nav/time.png")}
-                resizeMode="contain"
-                style={{
-                  width: 18.72,
-                  height: 18.72,
-                  tintColor: focused ? "#0047D7" : "#9BB7F0",
-                }}
-              ></Image>
+              <Ionicons
+                name="time-outline"
+                size={30}
+                color={
+                  focused ? "rgba(255, 255, 255, 1)" : "rgba(25, 64, 182, 0.31)"
+                }
+              />
             </View>
           ),
         }}
@@ -128,20 +131,21 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: "center",
+                width: 100,
+                height: 44,
+                borderRadius: 35,
+                backgroundColor: focused ? "#0047D7" : "#EEF1FE",
                 justifyContent: "center",
-                top: "-5%",
+                alignItems: "center",
               }}
             >
-              <Image
-                source={require("../storages/nav/saved.png")}
-                resizeMode="contain"
-                style={{
-                  width: 18.72,
-                  height: 18.72,
-                  tintColor: focused ? "#0047D7" : "#9BB7F0",
-                }}
-              ></Image>
+              <AntDesign
+                name="filetext1"
+                size={30}
+                color={
+                  focused ? "rgba(255, 255, 255, 1)" : "rgba(25, 64, 182, 0.31)"
+                }
+              />
             </View>
           ),
         }}
@@ -154,30 +158,29 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                top: -30,
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
               <View
                 style={{
-                  width: 70,
-                  height: 70,
+                  width: 100,
+                  height: 44,
                   borderRadius: 35,
-                  backgroundColor: focused ? "#0047D7" : "#D9E3F9",
+                  backgroundColor: focused ? "#0047D7" : "#EEF1FE",
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Image
-                  source={require("../storages/nav/profile.png")}
-                  resizeMode="contain"
-                  style={{
-                    width: 24,
-                    height: 24,
-                    tintColor: focused ? "#9BB7F0" : "#9BB7F0",
-                  }}
-                ></Image>
+                <AntDesign
+                  name="Trophy"
+                  size={30}
+                  color={
+                    focused
+                      ? "rgba(255, 255, 255, 1)"
+                      : "rgba(25, 64, 182, 0.31)"
+                  }
+                />
               </View>
             </View>
           ),
