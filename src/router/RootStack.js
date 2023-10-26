@@ -8,6 +8,8 @@ import Profile from "../screen/Profile";
 import Saved from "../screen/Saved";
 import Time from "../screen/Time";
 import { AntDesign, FontAwesome5, Ionicons } from "@expo/vector-icons";
+import Upload from "../screenComponent/Upload";
+import DetailCard from "../screen/DetailCard";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -23,6 +25,7 @@ function TimeStacks() {
   return (
     <TimeStack.Navigator screenOptions={{ headerShown: false }}>
       <TimeStack.Screen name="Time Stack" component={Time} />
+      <TimeStack.Screen name="DetailCard" component={DetailCard} />
     </TimeStack.Navigator>
   );
 }

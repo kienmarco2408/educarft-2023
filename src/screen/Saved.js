@@ -1,6 +1,15 @@
-import { Image, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import React from "react";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
+import FileCard from "../screenComponent/saved/FileCard";
+import Upload from "../screenComponent/Upload";
 
 const Saved = () => {
   const file = [
@@ -34,9 +43,14 @@ const Saved = () => {
     },
   ];
   return (
-    <View style={{ backgroundColor: "#FFF", height: "100%" }}>
+    <View style={{ height: "100%", backgroundColor: "white" }}>
+      <Upload />
       <View
-        style={{ height: 109, backgroundColor: "#F9FAFF", borderRadius: 25 }}
+        style={{
+          height: 109,
+          backgroundColor: "#F9FAFF",
+          borderRadius: 25,
+        }}
       >
         <View
           style={{
@@ -60,7 +74,6 @@ const Saved = () => {
           <Image source={require("../storages/icon/bell.png")} />
         </View>
       </View>
-
       <View>
         <Image
           source={require("../storages/img1.png")}
@@ -98,6 +111,11 @@ const Saved = () => {
             Được tôi mở lần cuối
           </Text>
           <AntDesign name="arrowdown" size={16} color="#A4A2A2" />
+        </View>
+        <View>
+          <View>
+            <FileCard />
+          </View>
         </View>
       </View>
     </View>

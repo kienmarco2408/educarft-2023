@@ -2,11 +2,13 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { AntDesign, Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import Upload from "../screenComponent/Upload";
 
 const Profile = () => {
   const navigation = useNavigation();
   return (
     <View style={{ flex: 1 }}>
+      <Upload />
       <View
         style={{
           width: 188,
