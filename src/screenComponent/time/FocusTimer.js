@@ -1,12 +1,12 @@
 import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Modal } from "react-native";
 import { Svg, Circle } from "react-native-svg";
 import BannerTimer from "./BannerTimer";
 
 const FocusTimer = () => {
   const [isRunning, setIsRunning] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(900); // 15 minutes in seconds
+  const [timeRemaining, setTimeRemaining] = useState(5); // 15 minutes in seconds
   const [sessions, setSessions] = useState(4); // Total sessions
   const [currentSession, setCurrentSession] = useState(1); // Current session number
   const [stopTime, setStopTime] = useState(false); // New state variable for stop time message
@@ -20,9 +20,8 @@ const FocusTimer = () => {
       }, 1000);
     } else if (timeRemaining <= 0) {
       if (currentSession < sessions) {
-        // Start the next session
-        setTimeRemaining(900); // Reset the timer to 15 minutes
-        setCurrentSession(currentSession + 1); // Increase the current session
+        setTimeRemaining(5); // Reset the timer to 15 minutes
+        setCurrentSession(currentSession + 1);
       } else {
         // End all sessions
         clearInterval(timer);
@@ -46,12 +45,12 @@ const FocusTimer = () => {
 
   const stopTimer = () => {
     setIsRunning(false);
-    setTimeRemaining(900);
+    setTimeRemaining(5);
   };
 
   const resetTimer = () => {
     setIsRunning(false);
-    setTimeRemaining(900); // Reset the timer to 15 minutes
+    setTimeRemaining(5); // Reset the timer to 15 minutes
     setSessions(4); // Reset the session count
     setCurrentSession(1); // Reset to the first session
   };
@@ -60,7 +59,7 @@ const FocusTimer = () => {
   const seconds = timeRemaining % 60;
 
   return (
-    <>
+    <View>
       <View
         style={{
           flexDirection: "row",
@@ -116,7 +115,7 @@ const FocusTimer = () => {
             stroke="#59C3A1"
             strokeWidth="16"
             strokeDasharray={(2 * Math.PI * 150).toFixed(2)} // Sửa giá trị tương ứng với bán kính 100
-            strokeDashoffset={(2 * Math.PI * 150 * timeRemaining) / 900} // Sửa giá trị tương ứng với bán kính 100
+            strokeDashoffset={(2 * Math.PI * 150 * timeRemaining) / 5} // Sửa giá trị tương ứng với bán kính 100
           />
           <View>
             <Text style={styles.text}>
@@ -190,7 +189,7 @@ const FocusTimer = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </>
+    </View>
   );
 };
 
